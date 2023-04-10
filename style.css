@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.scores {
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-around;
+}
+
+.player,
+.computer {
+    text-align: center;
+}
+
+.gameresult {
+    background-color: lightyellow;
+    height: 180px;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    background-color: lightpink;
+    height: 400px;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.thechoices {
+    background-color: lightgoldenrodyellow;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
