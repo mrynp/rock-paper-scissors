@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <section>
-        <div class="scores">
-            <div class="player">
-                <h1 id="player-score">0</h1>
-                <h1 class="name">Player</h1>
-            </div>
-            <div class="computer">
-                <h1 id="computer-score">0</h1>
-                <h1 class="name">Computer</h1>
-            </div>
+      <div class="scores">
+        <div class="player">
+          <p id="player-score">0</p>
+          <h2 class="name">Player</h1>
         </div>
-
-        <div class="gameresult"><span id="result"></span></div>
-
-        <div class="game">
-            <span id="player-choice"></span>
-            <span id="computer-choice"></span>
+        <div class="computer">
+          <p id="computer-score">0</p>
+          <h2 class="name">Computer</h1>
         </div>
+      </div>
 
-        <div class="choices">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+      <div class="intro">
+        <h1>Rock Paper Scissors</h1>
+        <button>Let's Play</button>
+      </div>
+
+      <div class="match">
+        <h2 class="winner">Choose an option</h2>
+        <div class="hands">
+          <img class="player-hand" src="assets/rock.png" alt="" />
+          <img class="computer-hand" src="assets/rock.png" alt="" />
         </div>
+      </div>
 
+      <div class="gameresult"><span id="result"></span></div>
 
+      <div class="game">
+        <span id="player-choice"></span>
+        <span id="computer-choice"></span>
+      </div>
+
+      <div class="choices">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+      </div>
     </section>
 
-
-    <script src="app.js">
-    </script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>

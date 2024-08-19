@@ -1,44 +1,116 @@
-body {
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --dark-color: #373b65;
+  --light-color: #fffbf7;
+  --black-color: #1e1e20;
+  --accent-color: rgb(218, 140, 62);
+}
+
+section {
+  height: 100vh;
+  background-color: var(--light-color);
 }
 
 .scores {
-    background-color: lightblue;
-    display: flex;
-    justify-content: space-around;
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  color: var(--black-color);
 }
 
-.player,
-.computer {
-    text-align: center;
+.scores p {
+  font-size: 24px;
 }
 
-.gameresult {
-    background-color: lightyellow;
-    height: 180px;
-    width: 800px;
-    margin: 0 auto;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.intro {
+  color: var(--dark-color);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0;
+}
+
+.intro h1 {
+  font-size: 48px;
+}
+
+.intro button,
+.choices button {
+  width: 150px;
+  height: 50px;
+  background: none;
+  border: none;
+  border: 2px solid var(--dark-color);
+  border-radius: 10px;
+  /* background-color: var(--accent-color); */
+  color: var(--dark-color);
+  font-size: 16px;
+}
+
+.match {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.winner {
+  text-align: center;
+  color: var(--black-color);
+}
+
+.hands img {
+  width: 200px;
+}
+
+.computer-hand {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.hands,
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+/* .gameresult {
+  background-color: lightyellow;
+  height: 180px;
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .game {
-    background-color: lightpink;
-    height: 400px;
-    width: 800px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+  background-color: lightpink;
+  height: 400px;
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
 
 .thechoices {
-    background-color: lightgoldenrodyellow;
-    width: 800px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-evenly;
+  background-color: lightgoldenrodyellow;
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
 }
