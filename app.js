@@ -1,107 +1,6 @@
-// const playerChoiceDisplay = document.querySelector(".player-hand");
-// const computerChoiceDisplay = document.querySelector(".computer-hand");
-// const resultDisplay = document.querySelector(".winner");
-// const choices = document.querySelectorAll("button");
-// const playerScore = document.getElementById("player-score");
-// const computerScore = document.getElementById("computer-score");
-
-// let playerChoice;
-// let computerChoice;
-// let result;
-
-// let playScore = 0;
-// let compScore = 0;
-
-// choices.forEach((choice) =>
-//   choice.addEventListener("click", (e) => {
-//     playerChoice = e.target.id;
-//     playerChoiceDisplay.innerHTML = playerChoice;
-//     getComputerChoice();
-//     getResult();
-//     updateScores();
-//   })
-// );
-
-// function getComputerChoice() {
-//   const arr = ["rock", "paper", "scissors"];
-//   const random = Math.floor(Math.random() * arr.length);
-//   computerChoice = arr[random];
-//   computerChoiceDisplay.innerHTML = computerChoice;
-// }
-
-// let winningScore = 5;
-// let isGameOver = false;
-
-// function updateScores() {
-//   if (!isGameOver) {
-//     if (playScore === winningScore) {
-//       isGameOver = true;
-//       result = "YOU WIN!!!";
-//       resultDisplay.innerHTML = result;
-//       choices.disabled = true;
-//       rockButton.disabled = true;
-//       paperButton.disabled = true;
-//       scissorsButton.disabled = true;
-//     } else if (compScore === winningScore) {
-//       isGameOver = true;
-//       result = "YOU LOST!!!";
-//       resultDisplay.innerHTML = result;
-//       choices.disabled = true;
-//       rockButton.disabled = true;
-//       paperButton.disabled = true;
-//       scissorsButton.disabled = true;
-//     }
-//   }
-// }
-
-// function win() {
-//   playScore += 1;
-//   let result = "You Win!";
-//   resultDisplay.innerHTML = result;
-//   playerScore.innerHTML = playScore;
-// }
-
-// function lost() {
-//   compScore += 1;
-//   let result = "You Lost!";
-//   resultDisplay.innerHTML = result;
-//   computerScore.innerHTML = compScore;
-// }
-
-// function tie() {
-//   let result = "It's a tie!";
-//   resultDisplay.innerHTML = result;
-// }
-
-// function getResult() {
-//   if (playerChoice === "rock" && computerChoice === "rock") {
-//     tie();
-//   } else if (playerChoice === "paper" && computerChoice === "paper") {
-//     tie();
-//   } else if (playerChoice === "scissors" && computerChoice === "scissors") {
-//     tie();
-//   } else if (playerChoice === "rock" && computerChoice === "scissors") {
-//     win();
-//   } else if (playerChoice === "paper" && computerChoice === "rock") {
-//     win();
-//   } else if (playerChoice === "scissors" && computerChoice === "paper") {
-//     win();
-//   } else if (playerChoice === "rock" && computerChoice === "paper") {
-//     lost();
-//   } else if (playerChoice === "paper" && computerChoice === "scissors") {
-//     lost();
-//   } else if (playerChoice === "scissors" && computerChoice === "rock") {
-//     lost();
-//   }
-// }
-
-// let rockButton = document.getElementById("rock");
-// let paperButton = document.getElementById("paper");
-// let scissorsButton = document.getElementById("scissors");
-
 const game = () => {
-  let playScore = 0;
-  let compScore = 0;
+  let pScore = 0;
+  let cScore = 0;
 
   // Start the game
 
@@ -132,13 +31,26 @@ const game = () => {
         const random = Math.floor(Math.random() * arr.length);
         computerChoice = arr[random];
 
+        // Get game result
+        let playerChoice = this.textContent;
+        getResult(playerChoice, computerChoice);
+
         // Update images
         playerHand.src = `./assets/${this.textContent}.png`;
         computerHand.src = `./assets/${computerChoice}.png`;
 
-        console.log(this.textContent);
+        console.log(playerChoice);
       })
     );
+  };
+
+  const updateScore = () => {
+    const playerScore = document.querySelector(".player-score");
+    const computerScore = document.querySelector(".computer-score");
+    playerScore.textContent = pScore;
+    computerScore.textContent = cScore;
+    console.log(`player: ${pScore}`);
+    console.log(`player: ${cScore}`);
   };
 
   const getResult = (playerChoice, computerChoice) => {
@@ -153,27 +65,39 @@ const game = () => {
     if (playerChoice === "rock") {
       if (computerChoice === "scissors") {
         result.textContent = "Player Wins";
+        pScore++;
+        updateScore();
         return;
       } else {
         result.textContent = "Computer Wins";
+        cScore++;
+        updateScore();
         return;
       }
     }
     if (playerChoice === "paper") {
       if (computerChoice === "scissors") {
         result.textContent = "Computer Wins";
+        cScore++;
+        updateScore();
         return;
       } else {
         result.textContent = "Player Wins";
+        pScore++;
+        updateScore();
         return;
       }
     }
     if (playerChoice === "scissors") {
       if (computerChoice === "rock") {
         result.textContent = "Computer Wins";
+        cScore++;
+        updateScore();
         return;
       } else {
         result.textContent = "Player Wins";
+        pScore++;
+        updateScore();
         return;
       }
     }
