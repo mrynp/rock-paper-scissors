@@ -100,31 +100,62 @@ div.fadeIn {
   pointer-events: all;
 }
 
-/* .gameresult {
-  background-color: lightyellow;
-  height: 180px;
-  width: 800px;
-  margin: 0 auto;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+@keyframes shakePlayer {
+  0% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  65% {
+    transform: translateY(-50px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  85% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.game {
-  background-color: lightpink;
-  height: 400px;
-  width: 800px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-} */
-
-.thechoices {
-  background-color: lightgoldenrodyellow;
-  width: 800px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-evenly;
+@keyframes shakeComputer {
+  0% {
+    transform: scaleX(-1) translateY(0px);
+  }
+  15% {
+    transform: scaleX(-1) translateY(-50px);
+  }
+  25% {
+    transform: scaleX(-1) translateY(0px);
+  }
+  35% {
+    transform: scaleX(-1) translateY(-50px);
+  }
+  50% {
+    transform: scaleX(-1) translateY(0px);
+  }
+  65% {
+    transform: scaleX(-1) translateY(-50px);
+  }
+  75% {
+    transform: scaleX(-1) translateY(0px);
+  }
+  85% {
+    transform: scaleX(-1) translateY(-50px);
+  }
+  100% {
+    transform: scaleX(-1) translateY(0px);
+  }
 }
