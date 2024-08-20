@@ -14,7 +14,7 @@
 
   <body>
     <section>
-      <div class="scores">
+      <div class="scores fadeOut">
         <div class="player">
           <p id="player-score">0</p>
           <h2 class="name">Player</h1>
@@ -30,12 +30,18 @@
         <button>Let's Play</button>
       </div>
 
-      <div class="match">
+      <div class="match fadeOut">
         <h2 class="winner">Choose an option</h2>
         <div class="hands">
           <img class="player-hand" src="assets/rock.png" alt="" />
           <img class="computer-hand" src="assets/rock.png" alt="" />
         </div>
+
+            <div class="choices">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+      </div>
       </div>
 
       <div class="gameresult"><span id="result"></span></div>
@@ -45,11 +51,7 @@
         <span id="computer-choice"></span>
       </div>
 
-      <div class="choices">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-      </div>
+  
     </section>
 
     <script src="app.js"></script>

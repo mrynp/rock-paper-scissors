@@ -24,6 +24,7 @@ section {
   align-items: center;
   text-align: center;
   color: var(--black-color);
+  transition: opacity 0.5s ease 1s;
 }
 
 .scores p {
@@ -37,7 +38,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .intro h1 {
@@ -62,6 +63,7 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease 0.5s;
 }
 
 .winner {
@@ -84,6 +86,16 @@ section {
   justify-content: center;
   align-items: center;
   gap: 48px;
+}
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* .gameresult {
