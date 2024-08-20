@@ -56,6 +56,7 @@ section {
   /* background-color: var(--accent-color); */
   color: var(--dark-color);
   font-size: 16px;
+  cursor: pointer;
 }
 
 .match {
@@ -66,13 +67,14 @@ section {
   transition: opacity 0.5s ease 0.5s;
 }
 
-.winner {
+.result {
   text-align: center;
   color: var(--black-color);
 }
 
 .hands img {
   width: 200px;
+  margin: 50px;
 }
 
 .computer-hand {

@@ -103,6 +103,8 @@ const game = () => {
   let playScore = 0;
   let compScore = 0;
 
+  // Start the game
+
   const startGame = () => {
     const playBtn = document.querySelector(".intro button");
     const introScreen = document.querySelector(".intro");
@@ -116,7 +118,69 @@ const game = () => {
     });
   };
 
+  // Play match
+
+  const playMatch = () => {
+    const choices = document.querySelectorAll(".choices button");
+    const playerHand = document.querySelector(".player-hand");
+    const computerHand = document.querySelector(".computer-hand");
+
+    choices.forEach((choice) =>
+      choice.addEventListener("click", function () {
+        // Get computer choice
+        const arr = ["rock", "paper", "scissors"];
+        const random = Math.floor(Math.random() * arr.length);
+        computerChoice = arr[random];
+
+        // Update images
+        playerHand.src = `./assets/${this.textContent}.png`;
+        computerHand.src = `./assets/${computerChoice}.png`;
+
+        console.log(this.textContent);
+      })
+    );
+  };
+
+  const getResult = (playerChoice, computerChoice) => {
+    // Update text
+    const result = document.querySelector(".result");
+
+    if (playerChoice === computerChoice) {
+      result.textContent = "It is a tie";
+      return;
+    }
+
+    if (playerChoice === "rock") {
+      if (computerChoice === "scissors") {
+        result.textContent = "Player Wins";
+        return;
+      } else {
+        result.textContent = "Computer Wins";
+        return;
+      }
+    }
+    if (playerChoice === "paper") {
+      if (computerChoice === "scissors") {
+        result.textContent = "Computer Wins";
+        return;
+      } else {
+        result.textContent = "Player Wins";
+        return;
+      }
+    }
+    if (playerChoice === "scissors") {
+      if (computerChoice === "rock") {
+        result.textContent = "Computer Wins";
+        return;
+      } else {
+        result.textContent = "Player Wins";
+        return;
+      }
+    }
+  };
+
   startGame();
+  playMatch();
 };
 
 game();
